@@ -1,0 +1,20 @@
+clear all;
+f = inline('0*x','x');
+g = inline('1 - abs(2*x)','x');
+h = inline('0*x','x');
+x = -1:0.01:-0.5;
+y = -0.5:0.01:0.5;
+z = 0.5:0.01:1;
+plot(x, f(x));
+hold on;
+plot(y, g(y));
+hold on;
+plot(z, h(z));
+hold on;
+
+a = [-1 -0.5 0 0.5 1];
+b = [0 0 1 0 0];
+c = -1:0.01:1;
+d = spline(a,b,c);
+plot(a,b,'o',c,d);
+hold on;
